@@ -215,14 +215,14 @@ class Students
             $stmt->execute();
             $row = $stmt->fetch();
 
-           // while ($row = $stmt->fetch()) {
-           //     $result = [$row["students_id"], $row["first_name"], $row["last_name"], $row["email"], $row["cpr"]];
-           // }
+            // while ($row = $stmt->fetch()) {
+            //     $result = [$row["students_id"], $row["first_name"], $row["last_name"], $row["email"], $row["cpr"]];
+            // }
             $stmt = null;
             $db->disconnect($con);
 
             return $row;
-           // return $result;
+            // return $result;
         } else { }
     }
 }
