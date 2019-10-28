@@ -2,10 +2,10 @@
 <html lang="en">
 <?php
 /* Include <head></head> */
-require_once(dirname(__FILE__) . '/includes/header.php');
+require_once('../includes/header.php');
 
 /* New object of Students() */
-require_once(dirname(__FILE__) . '/includes/Students_class.php');
+require_once('../includes/Students_class.php');
 $students = new Students();
 /* Get students with id = $_GET["id"] */
 $sid = $_GET["sid"];
@@ -15,7 +15,7 @@ $cid = $_GET["cid"];
 <body>
     <?php
     /* Include <head></head> */
-    require_once(dirname(__FILE__) . '/includes/menu.php');
+    require_once('../includes/menu.php');
 
     ?>
     <div class="container">
@@ -29,8 +29,8 @@ $cid = $_GET["cid"];
                 <div class="form-group">
                     <label for="plot" class="col-sm-2 control-label">Grade</label>
                     <div class="col-sm-10">
-                        <input type="hidden" class="form-control"  name="sid" value=<?php echo $sid ?>>
-                        <input type="hidden" class="form-control"  name="cid" value=<?php echo $cid ?>>
+                        <input type="hidden" class="form-control" name="sid" value=<?php echo $sid ?>>
+                        <input type="hidden" class="form-control" name="cid" value=<?php echo $cid ?>>
                         <input type="text" class="form-control" placeholder="Grade" name="grade">
                     </div>
                 </div>

@@ -2,10 +2,10 @@
 <html lang="en">
 <?php
 /* Include <head></head> */
-require_once(dirname(__FILE__) . '/includes/header.php');
+require_once('../includes/header.php');
 
 /* New object of Students() */
-require_once(dirname(__FILE__) . '/includes/Students_class.php');
+require_once('../includes/Students_class.php');
 $students = new Students();
 
 // Get id from parameter in URL
@@ -17,7 +17,7 @@ $result = $students->get_student($id);
 <body>
     <?php
     /* Include menu */
-    require_once(dirname(__FILE__) . '/includes/menu.php');
+    require_once('../includes/menu.php');
 
     ?>
     <div class="container">
@@ -26,9 +26,9 @@ $result = $students->get_student($id);
             <h3>Edit <?php echo $result['first_name'] . ' ' .  $result['last_name'] ?></h3>
             <div class="col-xs-8 col-xs-offset-2">
                 <form class="form-horizontal" method="POST" action="edited_student.php">
-                    
-                    <input type="hidden" name="id" value="<?php echo $result['student_id'] ?>">
-                    
+
+                    <input type="hidden" name="id" value="<?php echo $result['students_id'] ?>">
+
                     <div class="form-group">
                         <label for="title" class="col-sm-2 control-label">First Name</label>
                         <div class="col-sm-10">
@@ -38,20 +38,20 @@ $result = $students->get_student($id);
                     <div class="form-group">
                         <label for="year" class="col-sm-2 control-label">Last Name</label>
                         <div class="col-sm-10">
-                            <input type="text"  class="form-control" id="year" placeholder="Last Name" name="lastname" value="<?php echo $result['last_name'] ?>">
+                            <input type="text" class="form-control" id="year" placeholder="Last Name" name="lastname" value="<?php echo $result['last_name'] ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="director" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                            <input type="email"  class="form-control" id="director" placeholder="email" name="email" value="<?php echo $result['email'] ?>">
+                            <input type="email" class="form-control" id="director" placeholder="email" name="email" value="<?php echo $result['email'] ?>">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="plot" class="col-sm-2 control-label">Cpr</label>
                         <div class="col-sm-10">
-                            <input type="text"  class="form-control" id="plot" placeholder="Cpr" name="cpr" value="<?php echo $result['cpr'] ?>">
+                            <input type="text" class="form-control" id="plot" placeholder="Cpr" name="cpr" value="<?php echo $result['cpr'] ?>">
                         </div>
                     </div>
 

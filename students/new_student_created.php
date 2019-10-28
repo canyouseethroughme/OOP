@@ -2,10 +2,10 @@
 <html lang="en">
 <?php
 /* Include <head></head> */
-require_once(dirname(__FILE__) . '/includes/header.php');
+require_once('../includes/header.php');
 
 /* New object of Students() */
-require_once(dirname(__FILE__) . '/includes/Students_class.php');
+require_once('../includes/Students_class.php');
 $students = new Students();
 
 // get name fields from input in new_student.php
@@ -21,16 +21,16 @@ echo $res;
 <body>
     <?php
     /* Include <head></head> */
-    require_once(dirname(__FILE__) . '/includes/menu.php');
+    require_once('../includes/menu.php');
     ?>
     <div class="container">
         <div class="row top-buffer">
             <h3>New Student created</h3>
             <div class="col-xs-8 col-xs-offset-2">
-            <div><?php echo $first ?></div>
-            <div><?php echo $last ?></div>
-            <div><?php echo $email ?></div>
-            <div><?php echo $cpr ?></div>
+                <div><?php echo $first ?></div>
+                <div><?php echo $last ?></div>
+                <div><?php echo $email ?></div>
+                <div><?php echo $cpr ?></div>
             </div>
         </div>
     </div>

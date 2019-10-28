@@ -2,10 +2,10 @@
 <html lang="en">
 <?php
 /* Include <head></head> */
-require_once(dirname(__FILE__) . '/includes/header.php');
+require_once('../includes/header.php');
 
 /* New object of Students() */
-require_once(dirname(__FILE__) . '/includes/Students_class.php');
+require_once('../includes/Students_class.php');
 $students = new Students();
 
 // Get id from parameter in URL
@@ -18,7 +18,7 @@ $students->delete($id);
 <body>
     <?php
     /* Include menu */
-    require_once(dirname(__FILE__) . '/includes/menu.php');
+    require_once('../includes/menu.php');
 
     ?>
     <div class="container">
