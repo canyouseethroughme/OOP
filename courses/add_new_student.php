@@ -5,53 +5,52 @@
 require_once('../includes/header.php');
 
 /* New object of Students() */
-require_once('../includes/Teachers_class.php');
-$teachers = new Teachers();
-
-// Get id from parameter in URL
-$id = $_GET["id"];
-
-$result = $teachers->get_teacher($id);
+//require_once('../includes/Students_class.php');
+//$students = new Students();
+/* Get a list of all students in DB */
+//$result = $students->list();
 ?>
 
 <body>
     <?php
-    /* Include menu */
+    /* Include <head></head> */
     require_once('../includes/menu.php');
-
     ?>
     <div class="container">
         <div class="row top-buffer">
-            <div class="alert alert-success">TASK: Edit teacher in the Database from the input fields below</div>
-            <h3>Edit <?php echo $result['first_name'] . ' ' .  $result['last_name'] ?></h3>
+          
+            <h3>New Student</h3>
             <div class="col-xs-8 col-xs-offset-2">
-                <form class="form-horizontal" method="POST" action="edited_teacher.php">
-
-                    <input type="hidden" name="id" value="<?php echo $result['teachers_id'] ?>">
-
+                <form class="form-horizontal" method="POST" action="new_student_added.php">
+                <div class="form-group">
+                        <label for="title" class="col-sm-2 control-label">Course id</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="title" placeholder="Course id" name="courseID">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="title" class="col-sm-2 control-label">First Name</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="title" placeholder="First Name" name="firstname" value="<?php echo $result['first_name'] ?>">
+                            <input type="text" class="form-control" id="title" placeholder="First Name" name="firstname">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="year" class="col-sm-2 control-label">Last Name</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="year" placeholder="Last Name" name="lastname" value="<?php echo $result['last_name'] ?>">
+                            <input type="text" class="form-control" id="year" placeholder="Last Name" name="lastname">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="director" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="director" placeholder="email" name="email" value="<?php echo $result['email'] ?>">
+                            <input type="email" class="form-control" id="director" placeholder="email" name="email">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="plot" class="col-sm-2 control-label">Cpr</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="plot" placeholder="Cpr" name="cpr" value="<?php echo $result['cpr'] ?>">
+                            <input type="text" class="form-control" id="plot" placeholder="Cpr" name="cpr">
                         </div>
                     </div>
 
@@ -65,7 +64,6 @@ $result = $teachers->get_teacher($id);
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

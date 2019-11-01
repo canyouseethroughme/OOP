@@ -5,14 +5,14 @@
 require_once('../includes/header.php');
 
 /* New object of Students() */
-require_once('../includes/Teachers_class.php');
-$teachers = new Teachers();
+require_once('../includes/Courses_class.php');
+$courses = new Courses();
 
 // Get id from parameter in URL
 $id = $_GET["id"];
 
 // Call delete method in $students object
-$teachers->delete($id);
+$courses->delete($id);
 ?>
 
 <body>
@@ -23,7 +23,7 @@ $teachers->delete($id);
     ?>
     <div class="container">
         <div class="row top-buffer">
-            <p id="msg" class="alert alert-success">Thank you, teacher is deleted</p>
+            <p id="msg" class="alert alert-success">Thank you, course is deleted</p>
         </div>
     </div>
 

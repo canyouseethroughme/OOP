@@ -8,9 +8,6 @@ require_once('../includes/header.php');
 require_once('../includes/Students_class.php');
 $students = new Students();
 
-require_once('../includes/Courses_class.php');
-$courses = new Courses();
-
 // get name fields from input in new_student.php
 $first = $_POST["firstname"];
 $last =  $_POST["lastname"];
@@ -19,7 +16,6 @@ $cpr = $_POST["cpr"];
 // call add method in students object
 $res = $students->add($first, $last, $email, $cpr);
 echo $res;
-
 ?>
 
 <body>
