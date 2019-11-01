@@ -14,19 +14,19 @@
     require_once('../includes/menu.php');
 
     require_once('../includes/Courses_class.php');
-$courses = new Courses();
-/* Get a list of all students in DB */
-$result = $courses->list();
+    $courses = new Courses();
+    /* Get a list of all students in DB */
+    $result = $courses->list();
 
-?>
+    ?>
     <div class="container">
-        
+
         <div class="row top-buffer">
             <a href="new_course.php" class="btn-primary btn">New course</a>
             <h1>Courses</h1>
 
-            <div class="alert alert-success"> 
-            You should at the "view course" page be able to add a teacher to a course, and should be able to enrolle new students. 
+            <div class="alert alert-success">
+                You should at the "view course" page be able to add a teacher to a course, and should be able to enrolle new students.
             </div>
             <table class=" table table-striped">
                 <tr>
@@ -48,7 +48,10 @@ $result = $courses->list();
                     echo "<td>" . $val[2] . "</td>";
                     echo "<td>" . $val[3] . "</td>";
                     echo "<td>" . $val[4] . "</td>";
-                    echo "<td style='text-align: right'> <a class='btn btn-primary' href='view_course.php?id=" . $val[0] . "'>View</a> 
+                    echo "<td style='text-align: right'> 
+                    <a class='btn btn-primary' href='view_course.php?id=" . $val[0] . "'>View</a> 
+                    <a class='btn btn-primary' href='enroll_student.php?courseId=" . $val[0] . "'>Enroll student</a>
+                    <a class='btn btn-primary' href='enroll_teacher.php?courseId=" . $val[0] . "'>Enroll teacher</a>
                     <a class='btn btn-danger' href='delete_course.php?id=" . $val[0] . "'>Delete</a> 
                     <a class='btn btn-primary' href='edit_course.php?id=" . $val[0] . "'>Edit</a> </td>";
                     echo "</tr>";
